@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+/* Define estilos básicos para o elemento html e body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Define um box-sizing global para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para o corpo do documento */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../img/fundo.png'); /* Define uma imagem de fundo */
+    background-size: 100% 100% 100%; /* Tamanho da imagem de fundo */
+    background-repeat: no-repeat; /* Não repete a imagem de fundo */
+    background-position: center center; /* Posição central da imagem de fundo */
+    height: 100vh; /* Altura do corpo igual à altura da janela */
+    justify-content: center; /* Centraliza conteúdo verticalmente */
+}
+
+/* Estilos para o cabeçalho */
+.header {
+    background-color: black; /* Cor de fundo preta */
+    width: 100%; /* Largura total do elemento */
+    position: relative; /* Posição relativa */
+}
+
+/* Estilos para a barra de navegação */
+nav {
+    background-color: black; /* Cor de fundo preta */
+    color: white; /* Cor do texto branco */
+    padding: 15px; /* Espaçamento interno de 15px */
+    transition: color 0.3s; /* Transição suave de cor */
+}
+
+/* Estilos para links na barra de navegação durante o hover */
+nav a:hover {
+    color: orange; /* Cor do texto laranja ao passar o mouse */
+}
+
+/* Estilos para links na barra de navegação */
+nav a {
+    color: white; /* Cor do texto branco */
+    margin: 0 15px; /* Margem de 0 nas laterais e 15px superior/inferior */
+    text-decoration: none; /* Remove decoração de sublinhado */
+}
+
+/* Estilos para seções de conteúdo */
+.section {
+    text-align: center; /* Alinhamento central do texto */
+    font-size: larger; /* Tamanho da fonte maior */
+    padding: 50px; /* Espaçamento interno de 50px */
+    color: white; /* Cor do texto branco */
+    /* Sombra do texto com múltiplos deslocamentos para efeito de destaque */
+    text-shadow: -1px -1px 0 rgb(78, 75, 75),  
+    1px -1px 0 rgb(78, 75, 75),
+    -1px 1px 0 rgb(78, 75, 75),
+    1px 1px 0 rgb(78, 75, 75); 
+}
+
+/* Estilos para cabeçalhos de seção */
+.section h2 {
+    margin-bottom: 20px; /* Margem inferior de 20px para o cabeçalho */
+}
+
+/* Estilos para parágrafos dentro das seções */
+.section p {
+    margin: 0 auto; /* Margem automática nas laterais */
+    max-width: 800px; /* Largura máxima de 800px */
+}
+
+
+/* Estilos para o container de slides */
+.slide-container {
+    position: relative; /* Posição relativa */
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    margin: auto; /* Centraliza na horizontal */
+    color: black; /* Cor do texto preto */
+    cursor: pointer; /* Cursor padrão de ponteiro */
+    margin-top: 20px; /* Margem superior de 20px */
+    overflow: hidden; /* Oculta conteúdo excedente */
+}
+
+/* Estilos para os slides */
+.slide {
+    display: flex; /* Exibe como flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 60%; /* Largura de 60% do container pai */
+    text-align: center; /* Alinhamento central do texto */
+    margin: auto; /* Centraliza na horizontal */
+    box-sizing: border-box; /* Box-sizing de borda incluída */
+}
+
+/* Estilos para slides ativos */
+.slide.active {
+    display: block; /* Exibe o slide ativo */
+}
+
+/* Estilos para imagens dentro dos slides */
+.slide img {
+    width: 100%; /* Largura de 100% */
+    max-width: 100%; /* Largura máxima de 100% */
+    height: 700px; /* Altura de 700px */
+    object-fit: cover; /* Ajusta a imagem dentro do contêiner */
+    display: block; /* Exibe como bloco */
+    margin: auto; /* Centraliza na horizontal */
+    border: 2px solid orange; /* Borda de 2px sólida laranja */
+    box-shadow: 0 0 10px black; /* Sombra preta */
+}
+
+
+/* Estilos para o container de miniaturas */
+.mini-slide-container {
+    display: flex; /* Exibe como flexbox */
+    overflow-x: auto; /* Rolagem horizontal automática */
+    scroll-snap-type: x mandatory; /* Tipo de rolagem obrigatória */
+    -webkit-overflow-scrolling: touch; /* Rolagem suave para iOS */
+    justify-content: flex-start; /* Alinhamento flexível no início */
+    margin-top: 20px; /* Margem superior de 20px */
+    margin-bottom: 20px; /* Margem inferior de 20px */
+}
+
+/* Estilos para imagens das miniaturas */
+.mini-slide img {
+    width: 260px; /* Largura de 260px */
+    height: 280px; /* Altura de 280px */
+    object-fit: cover; /* Ajusta a imagem dentro do contêiner */
+    scroll-snap-align: center; /* Alinha ao centro na rolagem */
+    cursor: pointer; /* Cursor padrão de ponteiro */
+    margin-right: 10px; /* Margem à direita de 10px */
+    border: 2px solid transparent; /* Borda transparente de 2px */
+    transition: border-color 0.3s ease; /* Transição suave de cor da borda */
+}
+
+/* Efeito de borda laranja ao passar o mouse nas miniaturas */
+.mini-slide img:hover {
+    border-color: orange; /* Cor da borda laranja ao passar o mouse */
+}
+
+/* Estilos para a seção de imagem sobre */
+.sobre-image {
+    text-align: center; /* Alinhamento central do texto */
+    width: 50%; /* Largura de 50% */
+    margin: auto; /* Centraliza na horizontal */
+}
+
+/* Estilos para imagens dentro da seção de imagem sobre */
+.sobre-image img {
+    width: 100%; /* Largura de 100% */
+    height: auto; /* Altura automática */
+}
+
+/* Estilos para o wrapper de conteúdo */
+.content-wrapper {
+    flex: 1; /* Flex-grow de 1 */
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: black; /* Cor de fundo preta */
+    color: white; /* Cor do texto branco */
+    text-align: center; /* Alinhamento central do texto */
+    padding: 10px 0; /* Espaçamento interno de 10px superior/inferior */
+    margin-top: auto; /* Margem superior automática */
+    width: 100%; /* Largura total */
+}
+@media (max-width: 600px) {
+    /* Estilos para o corpo do documento */
+    body {
+        padding: 0;
+    }
+
+    /* Estilos para o cabeçalho */
+    header {
+        position: static; /* Remove a posição fixa para que o conteúdo possa rolar por trás do cabeçalho */
+    }
+
+    /* Estilos para a barra de navegação */
+    nav {
+        display: block; /* Exibe os links verticalmente */
+        padding: 10px 0; /* Reduz o espaçamento interno */
+    }
+
+    /* Estilos para links na barra de navegação */
+    nav a {
+        display: block; /* Exibe os links verticalmente */
+        margin: 10px 0; /* Aumenta a margem entre os links */
+    }
+
+    /* Estilos para seções de conteúdo */
+    .section {
+        padding: 20px; /* Reduz o espaçamento interno */
+    }
+
+    /* Estilos para cabeçalhos de seção */
+    .section h2 {
+        font-size: large; /* Tamanho da fonte grande */
+        margin-bottom: 10px; /* Margem inferior menor para o cabeçalho */
+    }
+
+    /* Estilos para parágrafos dentro das seções */
+    .section p {
+        font-size: small; /* Tamanho da fonte menor */
+        max-width: 100%; /* Largura máxima completa */
+    }
+
+    /* Estilos para o rodapé */
+    footer {
+        padding: 20px 0; /* Aumenta o espaçamento interno */
+    }
+    iframe {
+        width: 100%; /* Largura total */
+        height: 300px; /* Altura fixa ou conforme necessário */
+    }
+}
